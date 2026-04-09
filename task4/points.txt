@@ -1,0 +1,8 @@
+5 10 Alpha
+-2 5 Beta
+0 -3 Gamma
+1 1 Delta
+-1 -1 Epsilon
+0 0 Zeta
+-5 0 Eta
+3 -2 Theta
