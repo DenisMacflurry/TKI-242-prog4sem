@@ -9,7 +9,20 @@ using namespace std;
 
 int main(void) {
     string name = "output.txt";
-    vector<int> numbers = {1, 0, 5, 0, 12, 3, 0, 7};
+    vector<int> numbers;
+
+    cout << "Введите числа :" << endl;
+
+    copy(
+        istream_iterator<int>(cin),
+        istream_iterator<int>(),
+        back_inserter(numbers)
+    );
+
+    if (numbers.empty()) {
+        cerr << "Ошибка: не введено ни одного числа!" << endl;
+        return 1;
+    }
 
     ofstream outFile(name);
 
