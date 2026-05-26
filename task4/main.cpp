@@ -8,6 +8,12 @@
 
 using namespace std;
 
+/**
+ * @brief Структура для представления точки с координатами и строкой
+ * @param x Координата X
+ * @param y Координата Y
+ * @param s Строка, связанная с точкой
+ */
 struct point {
     int x, y;
     string s;
@@ -18,14 +24,30 @@ struct point {
     }
 };
 
+/**
+ * @brief Перегрузка оператора ввода для структуры point
+ * @param is Поток ввода
+ * @param p Точка, в которую будут считаны данные
+ * @return Поток ввода после чтения данных
+ */
 istream& operator>>(istream& is, point& p) {
     return is >> p.x >> p.y >> p.s;
 }
 
+/**
+ * @brief Перегрузка оператора вывода для структуры point
+ * @param os Поток вывода 
+ * @param p Точка, данные которой будут выведены
+ * @return Поток вывода после записи данных
+ */
 ostream& operator<<(ostream& os, const point& p) {
     return os << p.x << " " << p.y << " " << p.s;
 }
 
+/**
+ * @brief Точка входа в программу
+ * @return Возвращает 0 при успешном завершении
+ */
 int main() {
     string name = "points.txt";
     
