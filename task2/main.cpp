@@ -27,6 +27,15 @@ bool checkEmpty(const Container& container, const string& containerName) {
     return false;
 }
 
+template<typename Container>
+void outputContainer(const Container& container, const string& containerName) {
+    cout << containerName << ": ";
+    for (const auto& element : container) {
+        cout << element << " ";
+    }
+    cout << endl;
+}
+
 int main(void) {
     vector<int> V;
     list<int> L;
@@ -46,12 +55,8 @@ int main(void) {
     auto list_it = next(L.begin(), min(5, (int)L.size()));
     L.insert(list_it, V.rend() - min(5, (int)V.size()), V.rend());
 
-    cout << "\nВектор: ";
-    for (int x : V) cout << x << " ";
-    
-    cout << "\nИтоговый список: ";
-    for (int x : L) cout << x << " ";
-    cout << endl;
+    outputContainer(V, "Вектор");
+    outputContainer(L, "Итоговый список");
     
     return 0;
 }
